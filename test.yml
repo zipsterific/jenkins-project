@@ -16,12 +16,12 @@
          msg: "This is fourth task"
        tags: fourth
 
- - name: Get size of /
-   shell: "df -h /"
-   register: shell_df_result
+     - name: Get size of /
+       shell: "df -h /"
+       register: shell_df_result
 
- - name: Set facts
-   set_fact:
-     run_tmpfs_size_mb: "{{ shell_df_result.stdout | int }}"
+     - name: Set facts
+       set_fact:
+       run_tmpfs_size_mb: "{{ shell_df_result.stdout | int }}"
 
- - debug: var=run_tmpfs_size_mb
+     - debug: var=run_tmpfs_size_mb

@@ -22,8 +22,4 @@
        shell: "df -h /"
        register: shell_df_result
 
-     - name: Set facts
-       set_fact:
-       run_tmpfs_size_mb: "{{ shell_df_result.stdout | int }}"
-
-     - debug: var=run_tmpfs_size_mb
+     - debug: var=shell_df_result
